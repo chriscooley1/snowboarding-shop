@@ -12,4 +12,4 @@ class Snowboard(BaseModel):
     length: int
     color: str
     has_bindings: bool
-    brand: str
+    brand: Brand
