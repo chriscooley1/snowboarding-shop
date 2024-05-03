@@ -25,14 +25,14 @@ async def get_snowboards() -> list[Snowboard]:
 async def create_snowboards(snowboard: Snowboard) -> None:
     snowboards.append(snowboard)
 
-@app.put("/snowboards")
+@app.put("/snowboards/{id}")
 async def update_snowboards(id: int, updated_snowboard: Snowboard) -> None:
     for i, snowboard in enumerate(snowboards):
         if snowboard.id == id:
             snowboards[i] = updated_snowboard
             return
     
-@app.delete("/snowboards")
+@app.delete("/snowboards/{id}")
 async def delete_snowboards(id: int) -> None:
     for i, snowboard in enumerate(snowboards):
         if snowboard.id == id:
